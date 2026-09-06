@@ -1,0 +1,72 @@
+:root{
+/* colors */
+--color-background:#F2EFE7;
+--color-surface:#EBE6D9;
+--color-surface-hover:#D2CCBC;
+--color-surface-pressed:#ACA79B;
+--color-text-primary:#2D2D2D;
+--color-text-secondary:#3C3C3C;
+--color-border:#707070;
+--color-primary:#3A3A3C;
+--color-on-primary:#FFFFFF;
+--color-primary-hover:#242426;
+--color-primary-pressed:#141415;
+--color-secondary-bg:#FFFFFF;
+--color-secondary-border:#111113;
+--color-secondary-text:#111113;
+--color-secondary-hover-bg:#F2F2F2;
+--color-secondary-pressed-bg:#E2E2E2;
+--color-surface-green-soft:#E1E8C4;
+--surface-card-elevated:#FFFFFF;
+
+/* semantic aliases */
+--bg-page:var(--color-background);
+--surface-card:var(--color-surface);
+--surface-card-hover:var(--color-surface-hover);
+--surface-card-pressed:var(--color-surface-pressed);
+--text-body:var(--color-text-primary);
+--text-muted:var(--color-text-secondary);
+--border-default:var(--color-border);
+--action-primary:var(--color-primary);
+--action-primary-hover:var(--color-primary-hover);
+--action-primary-pressed:var(--color-primary-pressed);
+--action-primary-text:var(--color-on-primary);
+--action-secondary-bg:var(--color-secondary-bg);
+--action-secondary-border:var(--color-secondary-border);
+--action-secondary-text:var(--color-secondary-text);
+--action-secondary-hover-bg:var(--color-secondary-hover-bg);
+--action-secondary-pressed-bg:var(--color-secondary-pressed-bg);
+
+/* card */
+--card-radius:20px;
+--card-shadow:0 1px 3px rgba(0,0,0,.06), 0 12px 24px rgba(0,0,0,.06);
+
+/* spacing */
+--space-4:4px;
+--space-8:8px;
+--space-16:16px;
+--space-24:24px;
+--space-32:32px;
+--space-48:48px;
+--space-64:64px;
+--radius-sm:8px;
+--radius-md:16px;
+--radius-pill:999px;
+--container-max:1200px;
+--grid-columns:12;
+--grid-gutter:var(--space-24);
+
+/* type */
+--font-display:'Poppins','Segoe UI',sans-serif;
+--font-body:'Poppins','Segoe UI',sans-serif;
+--text-heading-lg-size:40px;
+--text-heading-lg-line:48px;
+--text-heading-md-size:24px;
+--text-heading-md-line:32px;
+--text-body-size:16px;
+--text-body-line:24px;
+--text-small-size:13px;
+--text-small-line:18px;
+--text-label-size:14px;
+--text-label-line:20px;
+}
