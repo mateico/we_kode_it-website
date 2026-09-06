@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
 type CardProps = {
-  children: React.ReactNode;
-  className?: string;
-  padding?: string;
-  style?: React.CSSProperties;
+	children: React.ReactNode;
+	/**
+	 * Utility classes from the call site. Always pass your own padding
+	 * (e.g. "p-6", "p-8") — Card doesn't set one so call sites stay in control.
+	 */
+	className?: string;
 };
 
-export function Card({ children, className, padding = 'var(--space-24)', style }: CardProps) {
-  return (
-    <div className={className} style={{ background: 'var(--surface-card-elevated)', border: 'none', borderRadius: 'var(--card-radius)', boxShadow: 'var(--card-shadow)', padding, ...style }}>
-      {children}
-    </div>
-  );
+export function Card({ children, className = "" }: CardProps) {
+	return (
+		<div className={`bg-card rounded-card shadow-card ${className}`}>
+			{children}
+		</div>
+	);
 }
