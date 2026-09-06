@@ -17,68 +17,71 @@
  *  Change a value here and it updates everywhere at once.
  * ------------------------------------------------------------------ */
 @theme {
-	/* fonts — Poppins is loaded in layout.tsx and exposed as --font-poppins */
-	--font-sans: var(--font-poppins), "Segoe UI", sans-serif;
-	--font-display: var(--font-poppins), "Segoe UI", sans-serif;
+  /* fonts — Poppins is loaded in layout.tsx and exposed as --font-poppins */
+  --font-sans: var(--font-poppins), "Segoe UI", sans-serif;
+  --font-display: var(--font-poppins), "Segoe UI", sans-serif;
 
-	/* surfaces */
-	--color-page: #f4f4f5; /* page background */
-	--color-surface: #f4f4f5; /* section background */
-	--color-card: #ffffff; /* elevated card background */
-	--color-hero: #f4f4f5; /* hero band background */
+  /* type scale */
+  --text-nav: 1.1rem; /* 19.5px — header nav links (13px × 1.5) */
 
-	/* text */
-	--color-body: #111113; /* headings + body copy */
-	--color-muted: #6b6b70; /* secondary copy */
+  /* surfaces */
+  --color-page: #f4f4f5; /* page background */
+  --color-surface: #f4f4f5; /* section background */
+  --color-card: #ffffff; /* elevated card background */
+  --color-hero: #f4f4f5; /* hero band background */
 
-	/* lines */
-	--color-line: #e4e4e7; /* borders + dividers */
+  /* text */
+  --color-body: #1c1c1f; /* headings + body copy */
+  --color-muted: #505052; /* secondary copy */
 
-	/* primary button */
-	--color-primary: #3a3a3c;
-	--color-primary-hover: #242426;
-	--color-primary-pressed: #141415;
-	--color-on-primary: #ffffff;
+  /* lines */
+  --color-line: #e4e4e7; /* borders + dividers */
 
-	/* secondary button */
-	--color-secondary: #ffffff;
-	--color-secondary-hover: #f2f2f2;
-	--color-secondary-pressed: #e2e2e2;
-	--color-secondary-line: #111113;
+  /* primary button */
+  --color-primary: #2a2a2c;
+  --color-primary-hover: #242426;
+  --color-primary-pressed: #141415;
+  --color-on-primary: #ffffff;
 
-	/* shape */
-	--radius-card: 20px;
-	--shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.06);
+  /* secondary button */
+  --color-secondary: #ffffff;
+  --color-secondary-hover: #f2f2f2;
+  --color-secondary-pressed: #e2e2e2;
+  --color-secondary-line: #111113;
 
-	/* layout */
-	--container-site: 1210px; /* max content width -> max-w-site */
+  /* shape */
+  --radius-card: 20px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.06);
 
-	/* the infinite marquee on the tech strip */
-	--animate-tech-scroll: tech-scroll 30s linear infinite;
+  /* layout */
+  --container-site: 1210px; /* max content width -> max-w-site */
+
+  /* the infinite marquee on the tech strip */
+  --animate-tech-scroll: tech-scroll 30s linear infinite;
 }
 
 @keyframes tech-scroll {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-50%);
-	}
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ------------------------------------------------------------------ *
  *  Base layer — a few global defaults, everything else is utilities
  * ------------------------------------------------------------------ */
 @layer base {
-	body {
-		background-color: var(--color-page);
-		color: var(--color-body);
-		font-family: var(--font-sans);
-	}
+  body {
+    background-color: var(--color-page);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+  }
 
-	h1,
-	h2,
-	h3 {
-		font-family: var(--font-display);
-	}
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
 }

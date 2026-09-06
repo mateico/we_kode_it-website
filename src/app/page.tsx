@@ -10,20 +10,20 @@ import { Footer } from "@/components/marketing/Footer";
 
 // Thin horizontal rule between sections.
 function Divider() {
-	return (
-		<div className="mx-auto h-px w-[calc(100%-4rem)] max-w-site bg-line" />
-	);
+  return (
+    <div className="mx-auto h-px w-[calc(100%-4rem)] max-w-site bg-line" />
+  );
 }
 
 export default function Home() {
-	return (
-		<div>
-			{/* faint vertical guides at the edges of the content column (wide screens only) */}
-			<div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-px bg-line left-[max(12px,calc(50%-720px))] xl:block" />
-			<div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-px bg-line right-[max(12px,calc(50%-720px))] xl:block" />
+  return (
+    <div>
+      {/* faint vertical guides at the edges of the content column (wide screens only) */}
+      <div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-px bg-line left-[max(12px,calc(50%-720px))] xl:block" />
+      <div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-px bg-line right-[max(12px,calc(50%-720px))] xl:block" />
 
-			<Header />
-			<Hero />
+      <Header />
+      {/* <Hero />
 			<Divider />
 			<TechStack />
 			<Divider />
@@ -39,7 +39,7 @@ export default function Home() {
 			<Divider />
 			<CTASection heading="Ready to build something real?" footNote />
 			<Divider />
-			<Footer />
-		</div>
-	);
+			<Footer /> */}
+    </div>
+  );
 }
