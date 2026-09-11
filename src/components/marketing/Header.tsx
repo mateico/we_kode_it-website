@@ -37,7 +37,7 @@ export function Header() {
         </div>
 
         {/* desktop nav */}
-        <nav className="hidden justify-self-center gap-7 md:flex">
+        <nav className="hidden justify-self-center gap-7 md:flex md:ml-12">
           {LINKS.map((label) => (
             <a key={label} href="#" className={navLink}>
               {label}
