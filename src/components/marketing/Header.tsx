@@ -20,18 +20,18 @@ export function Header() {
     "font-sans text-primary font-regular text-muted no-underline transition-[color,scale] duration-150 hover: hover:scale-[1.08]";
 
   return (
-    <div className="sticky top-0 z-50 px-8 pt-2.5 max-sm:px-3 max-sm:pt-2">
+    <div className="sticky top-0 z-50 px-8 pt-2.5 max-md:px-0 max-md:pt-0">
       <header
-        className={`relative mx-auto grid max-w-site grid-cols-[1fr_auto_1fr] items-center rounded-full border px-4 py-1.5 transition-colors duration-200 max-sm:px-2 ${
+        className={`relative mx-auto grid max-w-site grid-cols-[1fr_auto_1fr] items-center px-8 py-2 transition-colors duration-200 max-md:px-4 max-md:py-3 max-md:bg-white max-md:border-transparent ${
           scrolled
-            ? "border-line bg-page shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
-            : "border-transparent bg-transparent shadow-none"
+            ? "md:border-[#d5d7db] md:bg-white md:shadow-[0_8px_24px_rgba(0,0,0,0.06)] md:rounded-2xl md:border"
+            : "md:border-transparent md:bg-transparent md:shadow-none"
         }`}
       >
         {/* logo */}
-        <div className="col-start-1 flex items-center gap-1.5 justify-self-start">
+        <div className="col-start-1 flex items-center gap-4 justify-self-start">
           <img src="/logo-mark.svg" alt="" className="block h-[17px]" />
-          <span className="font-display text-2xl font-bold leading-none text-body">
+          <span className="font-display text-2xl font-semibold leading-none text-body">
             WeKodeit
           </span>
         </div>
@@ -46,7 +46,7 @@ export function Header() {
         </nav>
 
         {/* actions */}
-        <div className="col-start-3 flex items-center gap-2.5 justify-self-end">
+        <div className="col-start-3 flex items-center gap-4.5 justify-self-end">
           <Button size="sm" className="whitespace-nowrap">
             Book a call
           </Button>
@@ -76,10 +76,10 @@ export function Header() {
 
         {/* mobile nav dropdown */}
         <nav
-          className={`absolute inset-x-0 top-full mt-2 flex flex-col overflow-hidden rounded-2xl bg-page transition-all duration-200 ${
+          className={`absolute inset-x-0 top-full flex flex-col overflow-hidden bg-white transition-all duration-200 ${
             menuOpen
-              ? "max-h-64 border border-line p-2 opacity-100 shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
-              : "max-h-0 border border-transparent p-0 opacity-0"
+              ? "max-h-64  p-2 opacity-100 shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+              : "max-h-0  p-0 opacity-0"
           }`}
         >
           {LINKS.map((label) => (

@@ -23,7 +23,14 @@ export default function Home() {
       <div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-px bg-line right-[max(12px,calc(50%-720px))] xl:block" />
 
       <Header />
-      {/* <Hero />
+      <Hero />
+      <Divider />
+      <TechStack />
+      <Divider />
+      <WhatWeBuild />
+      <Divider />
+      <HowWeWork />
+      {/* 
 			<Divider />
 			<TechStack />
 			<Divider />
