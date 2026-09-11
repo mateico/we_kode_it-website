@@ -24,7 +24,7 @@ export function Header() {
       <header
         className={`relative mx-auto grid max-w-site grid-cols-[1fr_auto_1fr] items-center px-8 py-2 transition-colors duration-200 max-md:px-4 max-md:py-3 max-md:bg-white max-md:border-transparent ${
           scrolled
-            ? "md:border-[#d5d7db] md:bg-white md:shadow-[0_8px_24px_rgba(0,0,0,0.06)] md:rounded-2xl md:border"
+            ? "md:border-line md:bg-white md:shadow-[0_8px_24px_rgba(0,0,0,0.06)] md:rounded-2xl md:border"
             : "md:border-transparent md:bg-transparent md:shadow-none"
         }`}
       >

@@ -19,8 +19,8 @@ export default function Home() {
   return (
     <div>
       {/* faint vertical guides at the edges of the content column (wide screens only) */}
-      <div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-px bg-line left-[max(12px,calc(50%-720px))] xl:block" />
-      <div className="pointer-events-none fixed top-0 z-[1] hidden h-full w-px bg-line right-[max(12px,calc(50%-720px))] xl:block" />
+      <div className="pointer-events-none fixed top-0 z-[1] h-full w-px bg-line left-[max(12px,calc(50%-var(--max-width-site-half)))] block" />
+      <div className="pointer-events-none fixed top-0 z-[1] h-full w-px bg-line right-[max(12px,calc(50%-var(--max-width-site-half)))] block" />
 
       <Header />
       <Hero />

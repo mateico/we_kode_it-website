@@ -35,7 +35,7 @@
   --color-muted: #505052; /* secondary copy */
 
   /* lines */
-  --color-line: #e4e4e7; /* borders + dividers */
+  --color-line: #d5d7db; /* borders + dividers */
 
   /* primary button */
   --color-primary: #2a2a2c;
@@ -54,7 +54,8 @@
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.06);
 
   /* layout */
-  --container-site: 1210px; /* max content width -> max-w-site */
+  --max-width-site: 1200px; /* max content width -> max-w-site */
+  --max-width-site-half: 600px; /* half of --max-width-site */
 
   /* the infinite marquee on the tech strip */
   --animate-tech-scroll: tech-scroll 30s linear infinite;
