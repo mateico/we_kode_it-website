@@ -32,10 +32,11 @@
 
   /* text */
   --color-body: #1c1c1f; /* headings + body copy */
-  --color-muted: #505052; /* secondary copy */
+  --color-muted: #212121; /* secondary copy */
 
   /* lines */
   --color-line: #d5d7db; /* borders + dividers */
+  --color-border-soft: rgba(0, 0, 0, 0.06);
 
   /* primary button */
   --color-primary: #2a2a2c;
@@ -51,11 +52,12 @@
 
   /* shape */
   --radius-card: 20px;
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.12);
 
   /* layout */
   --max-width-site: 1200px; /* max content width -> max-w-site */
   --max-width-site-half: 600px; /* half of --max-width-site */
+  --max-width-card: 1170px;
 
   /* the infinite marquee on the tech strip */
   --animate-tech-scroll: tech-scroll 30s linear infinite;

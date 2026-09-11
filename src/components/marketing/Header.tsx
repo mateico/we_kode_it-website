@@ -22,10 +22,10 @@ export function Header() {
   return (
     <div className="sticky top-0 z-50 px-8 pt-2.5 max-md:px-0 max-md:pt-0">
       <header
-        className={`relative mx-auto grid max-w-site grid-cols-[1fr_auto_1fr] items-center px-8 py-2 transition-colors duration-200 max-md:px-4 max-md:py-3 max-md:bg-white max-md:border-transparent ${
+        className={`relative mx-auto grid  grid-cols-[1fr_auto_1fr] items-center px-16 py-2 transition-all duration-400 max-md:px-4 max-md:py-3 max-md:bg-white max-md:border-transparent max-w-[1146px] ${
           scrolled
-            ? "md:border-line md:bg-white md:shadow-[0_8px_24px_rgba(0,0,0,0.06)] md:rounded-2xl md:border"
-            : "md:border-transparent md:bg-transparent md:shadow-none"
+            ? "md:mx-auto md:max-w-[1148px] md:border-line md:bg-white md:shadow-[0_8px_24px_rgba(0,0,0,0.06)] md:rounded-2xl md:border pt-0px"
+            : "md:border-transparent md:shadow-none"
         }`}
       >
         {/* logo */}
