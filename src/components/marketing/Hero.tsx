@@ -50,7 +50,7 @@ export function Hero() {
                   alt="Custom software built around you"
                   width={640}
                   height={640}
-                  className="h-auto w-full blur-[0.4px]"
+                  className="h-auto w-full"
                   priority
                 />
 
