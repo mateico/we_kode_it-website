@@ -10,26 +10,30 @@ import { Footer } from "@/components/marketing/Footer";
 
 // Thin horizontal rule between sections.
 function Divider() {
-  return (
-    <div className="mx-auto h-px w-[calc(100%-4rem)] max-w-site bg-line" />
-  );
+  return <div className="mx-auto h-px max-w-site bg-line" />;
 }
 
 export default function Home() {
   return (
     <div>
-      {/* faint vertical guides at the edges of the content column (wide screens only) */}
-      <div className="pointer-events-none fixed top-0 z-[1] h-full w-px bg-line left-[max(12px,calc(50%-var(--max-width-site-half)))] block" />
-      <div className="pointer-events-none fixed top-0 z-[1] h-full w-px bg-line right-[max(12px,calc(50%-var(--max-width-site-half)))] block" />
+      <Header className="md:hidden" />
 
-      <Header />
-      <Hero />
-      <Divider />
-      <TechStack />
-      <Divider />
-      <WhatWeBuild />
-      <Divider />
-      <HowWeWork />
+      <div className="relative px-8 max-w-[1197px] mx-auto">
+        <div aria-hidden className="absolute inset-y-0 left-4 w-px bg-line" />
+        <div aria-hidden className="absolute inset-y-0 right-4 w-px bg-line" />
+        <Header className="hidden md:block" />
+
+        <Hero />
+        <Divider />
+        <TechStack />
+        <Divider />
+        <WhatWeBuild />
+        <Divider />
+        <HowWeWork />
+        <Divider />
+      </div>
+
+      <Footer />
       {/* 
 			<Divider />
 			<TechStack />

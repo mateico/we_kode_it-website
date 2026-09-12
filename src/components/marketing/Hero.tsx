@@ -10,7 +10,7 @@ export function Hero() {
   const [email, setEmail] = React.useState("");
 
   return (
-    <section className="bg-hero py-4 mx-6.5">
+    <section className="bg-hero py-4 ">
       <div className="mx-auto grid max-w-site grid-cols-12 gap-6">
         <Card className="col-span-12  p-[80px_64px] max-lg:p-[56px_40px] max-sm:p-[18px_24px] w-full mx-auto max-w-[var(--max-width-card)] border border-[var(--color-border-soft)]">
           <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-16">

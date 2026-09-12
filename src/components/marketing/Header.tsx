@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 
 const LINKS = ["Web", "CRM", "Mobile", "About Us"];
 
-export function Header() {
+export function Header({ className = "" }: { className?: string }) {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
 
@@ -20,7 +20,9 @@ export function Header() {
     "font-sans text-primary font-regular text-muted no-underline transition-[color,scale] duration-150 hover: hover:scale-[1.08]";
 
   return (
-    <div className="sticky top-0 z-50 px-8 pt-2.5 max-md:px-0 max-md:pt-0">
+    <div
+      className={`sticky top-0 z-50 px-4 pt-2.5 max-md:px-0 max-md:pt-0 ${className}`}
+    >
       <header
         className={`relative mx-auto grid  grid-cols-[1fr_auto_1fr] items-center px-16 py-2 transition-all duration-400 max-md:px-4 max-md:py-3 max-md:bg-white max-md:border-transparent max-w-[1146px] ${
           scrolled
