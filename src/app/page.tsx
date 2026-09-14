@@ -31,6 +31,14 @@ export default function Home() {
         <Divider />
         <HowWeWork />
         <Divider />
+        <WhyUs />
+        <Divider />
+        <CTASection compact />
+        <Divider />
+        <CaseStudies />
+        <Divider />
+        <CTASection heading="Ready to build something real?" footNote />
+        <Divider />
       </div>
 
       <Footer />
@@ -42,13 +50,7 @@ export default function Home() {
 			<Divider />
 			<HowWeWork />
 			<Divider />
-			<WhyUs />
-			<Divider />
-			<CTASection compact />
-			<Divider />
-			<CaseStudies />
-			<Divider />
-			<CTASection heading="Ready to build something real?" footNote />
+			
 			<Divider />
 			<Footer /> */}
     </div>
