@@ -133,22 +133,20 @@ export function Hero() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
         >
           <Card className="animate-dialog-in flex w-full max-w-sm flex-col items-center gap-4 border border-[var(--color-border-soft)] p-8 text-center">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-100">
-              <svg
-                viewBox="0 0 20 20"
-                fill="none"
-                className="h-8 w-8 text-green-600"
-                aria-hidden
-              >
-                <path
-                  d="M5 10.5l3 3 7-7"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="h-14 w-14 shrink-0 text-green-500"
+              aria-hidden
+            >
+              <path
+                d="M5 13l4.5 4.5L19 8"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
             <div className="flex flex-col gap-1">
               <p
                 id="success-dialog-title"

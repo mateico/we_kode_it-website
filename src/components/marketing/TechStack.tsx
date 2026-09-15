@@ -24,11 +24,11 @@ export function TechStack() {
           Our stack
         </p>
         <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent_0%,black_12%,black_88%,transparent_100%)]">
-          <div className="flex w-max items-center gap-16 animate-tech-scroll">
+          <div className="flex w-max items-center gap-[2.4rem] sm:gap-16 animate-tech-scroll">
             {track.map((logo, i) => (
               <div
                 key={logo.slug + i}
-                className="flex w-[100px] shrink-0 items-center justify-center"
+                className="flex w-[60px] shrink-0 items-center justify-center sm:w-[100px]"
               >
                 <img
                   src={`https://cdn.simpleicons.org/${logo.slug}`}

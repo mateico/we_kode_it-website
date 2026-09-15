@@ -2,7 +2,10 @@ import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  const { need, email } = await request.json();
+  const { need, email } = (await request.json()) as {
+    need: string;
+    email: string;
+  };
 
   if (!need || !email) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
@@ -10,10 +13,12 @@ export async function POST(request: Request) {
 
   const { env } = getCloudflareContext();
 
+  const RESEND_API_KEY = (env as { RESEND_API_KEY: string }).RESEND_API_KEY;
+
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      Authorization: `Bearer ${RESEND_API_KEY}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
