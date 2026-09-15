@@ -96,9 +96,7 @@ export function Hero() {
                   onClick={handleSubmit}
                   disabled={status === "submitting"}
                 >
-                  {status === "submitting"
-                    ? "Sending..."
-                    : "See What's Possible"}
+                  {status === "submitting" ? "Sending..." : "Send My Idea"}
                 </Button>
                 {status === "error" && (
                   <p className="m-0 text-left text-[0.7rem] text-red-400">

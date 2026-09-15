@@ -45,13 +45,16 @@ export function CTASection({ heading, footNote, compact }: CTASectionProps) {
               onChange={(e) => setEmail(e.target.value)}
             />
             <Button size={compact ? "sm" : "md"} className="w-full">
-              See What&apos;s Possible
+              Send My Idea
             </Button>
           </form>
           {footNote && (
             <p className="m-0 flex items-center gap-2 font-sans text-base text-muted">
               Prefer to talk first?
-              <a href="#" className="font-semibold text-primary no-underline">
+              <a
+                href="/book-a-call"
+                className="font-semibold text-primary no-underline"
+              >
                 Book a call →
               </a>
             </p>

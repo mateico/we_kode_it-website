@@ -49,9 +49,11 @@ export function Header({ className = "" }: { className?: string }) {
 
         {/* actions */}
         <div className="col-start-3 flex items-center gap-4.5 justify-self-end">
-          <Button size="sm" className="whitespace-nowrap">
-            Book a call
-          </Button>
+          <a href="/book-a-call">
+            <Button size="sm" className="whitespace-nowrap">
+              Book a call
+            </Button>
+          </a>
           <button
             type="button"
             aria-label="Menu"
