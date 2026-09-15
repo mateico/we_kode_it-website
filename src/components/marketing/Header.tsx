@@ -35,7 +35,13 @@ export function Header({ className = "" }: { className?: string }) {
           href="/"
           className="col-start-1 flex items-center gap-4 justify-self-start no-underline"
         >
-          <img src="/logo-mark.svg" alt="" className="block h-[25px]" />
+          <img
+            src="/logo-mark.svg"
+            alt=""
+            width={45}
+            height={25}
+            className="block h-[25px] w-auto"
+          />
           <span className="font-display text-2xl font-semibold leading-none text-body">
             WeKodeit
           </span>
