@@ -6,9 +6,43 @@ import { Input } from "@/components/ui/Input";
 import Image from "next/image";
 import heroLogo from "@/assets/hero_logo.webp";
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function Hero() {
   const [need, setNeed] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [errors, setErrors] = React.useState({ need: "", email: "" });
+  const [status, setStatus] = React.useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async () => {
+    const nextErrors = {
+      need: need.trim() ? "" : "Please tell us what you need.",
+      email: !email.trim()
+        ? "Please enter your email."
+        : EMAIL_PATTERN.test(email.trim())
+          ? ""
+          : "Please enter a valid email.",
+    };
+    setErrors(nextErrors);
+    if (nextErrors.need || nextErrors.email) return;
+
+    setStatus("submitting");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ need, email }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setNeed("");
+      setEmail("");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <section className="bg-hero py-4">
@@ -31,19 +65,46 @@ export function Hero() {
                 className="flex w-full flex-col gap-4 md:max-w-[420px]"
                 onSubmit={(e) => e.preventDefault()}
               >
-                <Input
-                  placeholder="Tell us what you need..."
-                  multiline
-                  value={need}
-                  onChange={(e) => setNeed(e.target.value)}
-                />
-                <Input
-                  placeholder="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <Button className="self-start">See What&apos;s Possible</Button>
+                <div className="flex flex-col gap-1">
+                  <Input
+                    placeholder="Tell us what you need..."
+                    multiline
+                    value={need}
+                    onChange={(e) => setNeed(e.target.value)}
+                  />
+                  {errors.need && (
+                    <p className="m-0 text-left text-[0.7rem] text-red-400">
+                      {errors.need}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col gap-1">
+                  <Input
+                    placeholder="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  {errors.email && (
+                    <p className="m-0 text-left text-[0.7rem] text-red-400">
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+                <Button
+                  className="self-start"
+                  onClick={handleSubmit}
+                  disabled={status === "submitting"}
+                >
+                  {status === "submitting"
+                    ? "Sending..."
+                    : "See What's Possible"}
+                </Button>
+                {status === "error" && (
+                  <p className="m-0 text-left text-[0.7rem] text-red-400">
+                    Something went wrong. Please try again.
+                  </p>
+                )}
               </form>
             </div>
             <div className="w-full max-w-[420px] md:max-w-none md:flex-[4]">
@@ -64,6 +125,45 @@ export function Hero() {
           </div>
         </Card>
       </div>
+      {status === "success" && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="success-dialog-title"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+        >
+          <Card className="animate-dialog-in flex w-full max-w-sm flex-col items-center gap-4 border border-[var(--color-border-soft)] p-8 text-center">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-100">
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                className="h-8 w-8 text-green-600"
+                aria-hidden
+              >
+                <path
+                  d="M5 10.5l3 3 7-7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <div className="flex flex-col gap-1">
+              <p
+                id="success-dialog-title"
+                className="m-0 font-display text-lg font-bold text-body"
+              >
+                Message received!
+              </p>
+              <p className="m-0 text-sm text-gray-500">
+                We&apos;ll be in touch soon.
+              </p>
+            </div>
+            <Button onClick={() => setStatus("idle")}>OK</Button>
+          </Card>
+        </div>
+      )}
     </section>
   );
 }
