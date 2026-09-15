@@ -10,6 +10,7 @@ type InputProps = {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
   className?: string;
+  min?: string;
 };
 
 // hover + focus states are plain Tailwind now — no JS needed
@@ -23,6 +24,7 @@ export function Input({
   value,
   onChange,
   className = "",
+  min,
 }: InputProps) {
   if (multiline) {
     return (
@@ -43,6 +45,7 @@ export function Input({
       value={value}
       onChange={onChange}
       className={`${cls} ${className}`}
+      min={min}
     />
   );
 }

@@ -5,44 +5,20 @@ import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import Image from "next/image";
 import heroLogo from "@/assets/hero_logo.webp";
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { useNeedEmailForm } from "@/components/marketing/useNeedEmailForm";
+import { SuccessDialog } from "@/components/marketing/SuccessDialog";
 
 export function Hero() {
-  const [need, setNeed] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [errors, setErrors] = React.useState({ need: "", email: "" });
-  const [status, setStatus] = React.useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
-
-  const handleSubmit = async () => {
-    const nextErrors = {
-      need: need.trim() ? "" : "Please tell us what you need.",
-      email: !email.trim()
-        ? "Please enter your email."
-        : EMAIL_PATTERN.test(email.trim())
-          ? ""
-          : "Please enter a valid email.",
-    };
-    setErrors(nextErrors);
-    if (nextErrors.need || nextErrors.email) return;
-
-    setStatus("submitting");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ need, email }),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      setNeed("");
-      setEmail("");
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
-  };
+  const {
+    need,
+    setNeed,
+    email,
+    setEmail,
+    errors,
+    status,
+    setStatus,
+    handleSubmit,
+  } = useNeedEmailForm();
 
   return (
     <section className="bg-hero py-4">
@@ -124,41 +100,7 @@ export function Hero() {
         </Card>
       </div>
       {status === "success" && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="success-dialog-title"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
-        >
-          <Card className="animate-dialog-in flex w-full max-w-sm flex-col items-center gap-4 border border-[var(--color-border-soft)] p-8 text-center">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              className="h-14 w-14 shrink-0 text-green-500"
-              aria-hidden
-            >
-              <path
-                d="M5 13l4.5 4.5L19 8"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <div className="flex flex-col gap-1">
-              <p
-                id="success-dialog-title"
-                className="m-0 font-display text-lg font-bold text-body"
-              >
-                Message received!
-              </p>
-              <p className="m-0 text-sm text-gray-500">
-                We&apos;ll be in touch soon.
-              </p>
-            </div>
-            <Button onClick={() => setStatus("idle")}>OK</Button>
-          </Card>
-        </div>
+        <SuccessDialog onClose={() => setStatus("idle")} />
       )}
     </section>
   );

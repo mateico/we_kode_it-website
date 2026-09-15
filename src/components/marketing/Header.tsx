@@ -31,12 +31,15 @@ export function Header({ className = "" }: { className?: string }) {
         }`}
       >
         {/* logo */}
-        <div className="col-start-1 flex items-center gap-4 justify-self-start">
-          <img src="/logo-mark.svg" alt="" className="block h-[17px]" />
+        <a
+          href="/"
+          className="col-start-1 flex items-center gap-4 justify-self-start no-underline"
+        >
+          <img src="/logo-mark.svg" alt="" className="block h-[25px]" />
           <span className="font-display text-2xl font-semibold leading-none text-body">
             WeKodeit
           </span>
-        </div>
+        </a>
 
         {/* desktop nav */}
         <nav className="hidden justify-self-center gap-7 md:flex md:ml-12">

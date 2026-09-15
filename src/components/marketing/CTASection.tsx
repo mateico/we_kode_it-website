@@ -2,6 +2,8 @@
 import React from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { useNeedEmailForm } from "@/components/marketing/useNeedEmailForm";
+import { SuccessDialog } from "@/components/marketing/SuccessDialog";
 
 type CTASectionProps = {
   heading?: string;
@@ -10,8 +12,16 @@ type CTASectionProps = {
 };
 
 export function CTASection({ heading, footNote, compact }: CTASectionProps) {
-  const [need, setNeed] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  const {
+    need,
+    setNeed,
+    email,
+    setEmail,
+    errors,
+    status,
+    setStatus,
+    handleSubmit,
+  } = useNeedEmailForm();
 
   const sectionPad = compact ? "pb-14" : heading ? "pb-24" : "pb-20";
 
@@ -32,35 +42,60 @@ export function CTASection({ heading, footNote, compact }: CTASectionProps) {
             }`}
             onSubmit={(e) => e.preventDefault()}
           >
-            <Input
-              placeholder="Tell us what you need..."
-              multiline
-              value={need}
-              onChange={(e) => setNeed(e.target.value)}
-            />
-            <Input
-              placeholder="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Button size={compact ? "sm" : "md"} className="w-full">
-              Send My Idea
+            <div className="flex flex-col gap-1">
+              <Input
+                placeholder="Tell us what you need..."
+                multiline
+                value={need}
+                onChange={(e) => setNeed(e.target.value)}
+              />
+              {errors.need && (
+                <p className="m-0 text-left text-[0.7rem] text-red-400">
+                  {errors.need}
+                </p>
+              )}
+            </div>
+            <div className="flex flex-col gap-1">
+              <Input
+                placeholder="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {errors.email && (
+                <p className="m-0 text-left text-[0.7rem] text-red-400">
+                  {errors.email}
+                </p>
+              )}
+            </div>
+            <Button
+              size={compact ? "sm" : "md"}
+              className="w-full"
+              onClick={handleSubmit}
+              disabled={status === "submitting"}
+            >
+              {status === "submitting" ? "Sending..." : "Send My Idea"}
             </Button>
+            {status === "error" && (
+              <p className="m-0 text-left text-[0.7rem] text-red-400">
+                Something went wrong. Please try again.
+              </p>
+            )}
           </form>
           {footNote && (
             <p className="m-0 flex items-center gap-2 font-sans text-base text-muted">
               Prefer to talk first?
-              <a
-                href="/book-a-call"
-                className="font-semibold text-primary no-underline"
-              >
+              <a href="#" className="font-semibold text-primary no-underline">
                 Book a call →
               </a>
             </p>
           )}
         </div>
       </div>
+
+      {status === "success" && (
+        <SuccessDialog onClose={() => setStatus("idle")} />
+      )}
     </section>
   );
 }
