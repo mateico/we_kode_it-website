@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/marketing/Header";
-import { Footer } from "@/components/marketing/Footer";
 import { CTASection } from "@/components/marketing/CTASection";
 import { Card } from "@/components/ui/Card";
 import { WORKS, type WorkItem } from "@/lib/work";
@@ -68,29 +66,19 @@ function WorkDetailCard({
 
 export default function WorkPage() {
   return (
-    <div>
-      <Header className="md:hidden" />
+    <>
+      <section className="pb-16 pt-12">
+        <h1 className="mb-10 text-center text-[2rem] font-bold text-body">
+          Work
+        </h1>
+        <div className="flex flex-col gap-6">
+          {WORKS.map((w, i) => (
+            <WorkDetailCard key={w.slug} work={w} priority={i === 0} />
+          ))}
+        </div>
+      </section>
 
-      <div className="relative px-8 max-w-[1197px] mx-auto">
-        <div aria-hidden className="absolute inset-y-0 left-4 w-px bg-line" />
-        <div aria-hidden className="absolute inset-y-0 right-4 w-px bg-line" />
-        <Header className="hidden md:block" />
-
-        <section className="pb-16 pt-12">
-          <h1 className="mb-10 text-center text-[2rem] font-bold text-body">
-            Work
-          </h1>
-          <div className="flex flex-col gap-6">
-            {WORKS.map((w, i) => (
-              <WorkDetailCard key={w.slug} work={w} priority={i === 0} />
-            ))}
-          </div>
-        </section>
-
-        <CTASection heading="Ready to build something real?" footNote />
-      </div>
-
-      <Footer />
-    </div>
+      <CTASection heading="Ready to build something real?" footNote />
+    </>
   );
 }
