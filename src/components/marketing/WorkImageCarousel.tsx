@@ -44,7 +44,7 @@ export function WorkImageCarousel({
   }, [isMobile, revealed]);
 
   const go = (
-    e: React.MouseEvent<HTMLButtonElement>,
+    e: React.SyntheticEvent<HTMLButtonElement>,
     next: (i: number) => number,
   ) => {
     e.preventDefault();
@@ -115,6 +115,7 @@ export function WorkImageCarousel({
             type="button"
             aria-label="Previous image"
             onClick={(e) => go(e, (i) => (i === 0 ? count - 1 : i - 1))}
+            onTouchEnd={(e) => go(e, (i) => (i === 0 ? count - 1 : i - 1))}
             className="absolute left-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-body opacity-0 transition-opacity duration-200 group-hover:opacity-100 max-sm:h-9 max-sm:w-9 max-sm:text-lg max-sm:opacity-100"
           >
             ‹
@@ -124,6 +125,7 @@ export function WorkImageCarousel({
             type="button"
             aria-label="Next image"
             onClick={(e) => go(e, (i) => (i + 1) % count)}
+            onTouchEnd={(e) => go(e, (i) => (i + 1) % count)}
             className="absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/85 text-body opacity-0 transition-opacity duration-200 group-hover:opacity-100 max-sm:h-9 max-sm:w-9 max-sm:text-lg max-sm:opacity-100"
           >
             ›
