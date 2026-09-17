@@ -48,7 +48,7 @@ export const WORKS: WorkItem[] = [
     imageFirst: true,
     accent: "#d6688e",
     images: ["/work/oliviaspetspa/1.png", "/work/oliviaspetspa/2.png"],
-    link: "https://example-booking.app",
+    link: "https://www.oliviaspetspa.com",
     summary:
       "A wellness studio was losing bookings to phone tag and no-shows — we built a mobile app clients actually use to book, reschedule, and pay in a few taps.",
     paragraphs: [
