@@ -11,7 +11,7 @@ const REASONS = [
 export function WhyUs() {
   return (
     <section className="bg-surface pb-24 pt-8">
-      <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-4">
+      <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-0">
         <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
           Why us
         </h2>

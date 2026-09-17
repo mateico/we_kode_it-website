@@ -38,7 +38,7 @@ const STEPS = [
 export function HowWeWork() {
   return (
     <section className="bg-surface pt-8 pb-24">
-      <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-4">
+      <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-0">
         <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
           How we work
         </h2>

@@ -22,7 +22,6 @@ export default function Home() {
         <div aria-hidden className="absolute inset-y-0 left-4 w-px bg-line" />
         <div aria-hidden className="absolute inset-y-0 right-4 w-px bg-line" />
         <Header className="hidden md:block" />
-
         <Hero />
         <Divider />
         <TechStack />
@@ -31,9 +30,9 @@ export default function Home() {
         <Divider />
         <Work />
         <Divider />
-        <WhyUs />
-        <Divider />
         <CTASection compact />
+        <Divider />
+        <WhyUs />
         <Divider />
         <HowWeWork />
         <Divider />
