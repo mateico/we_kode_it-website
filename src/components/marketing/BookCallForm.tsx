@@ -120,8 +120,8 @@ export function BookCallForm() {
   };
 
   return (
-    <section className="bg-page py-16">
-      <div className="mx-auto max-w-site px-8 max-sm:px-4">
+    <section className="bg-page py-4">
+      <div className="mx-auto max-w-site px-8 max-sm:px-0">
         <Card className="mx-auto w-full max-w-[560px] p-[56px_48px] max-sm:p-[24px_20px] border border-[var(--color-border-soft)]">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2 text-center">

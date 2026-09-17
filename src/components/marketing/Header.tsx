@@ -1,14 +1,16 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 
 const LINKS = [
   { label: "Work", href: "/work" },
-  { label: "About Us", href: "#" },
+  { label: "About Us", href: "/about-us" },
 ];
 
 export function Header({ className = "" }: { className?: string }) {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const toggleRef = React.useRef<HTMLButtonElement>(null);
@@ -41,8 +43,12 @@ export function Header({ className = "" }: { className?: string }) {
     return () => window.removeEventListener("scroll", update);
   }, []);
 
-  const navLink =
-    "font-sans text-primary font-regular text-muted no-underline transition-[color,scale] duration-150 hover: hover:scale-[1.08]";
+  const navLink = (active: boolean) =>
+    `border-b-2 pb-1 font-sans font-regular no-underline transition-[color,scale] duration-150 hover:scale-[1.08] ${
+      active
+        ? "border-body font-semibold text-body"
+        : "border-transparent text-muted hover:text-body"
+    }`;
 
   return (
     <div
@@ -75,7 +81,11 @@ export function Header({ className = "" }: { className?: string }) {
         {/* desktop nav */}
         <nav className="hidden justify-self-center gap-7 md:flex md:ml-12">
           {LINKS.map(({ label, href }) => (
-            <a key={label} href={href} className={navLink}>
+            <a
+              key={label}
+              href={href}
+              className={navLink(pathname === href)}
+            >
               {label}
             </a>
           ))}
@@ -126,7 +136,9 @@ export function Header({ className = "" }: { className?: string }) {
             <a
               key={label}
               href={href}
-              className="px-3 py-3 font-sans text-[15px] font-semibold text-body no-underline"
+              className={`px-3 py-3 font-sans text-[15px] font-semibold no-underline ${
+                pathname === href ? "text-body" : "text-muted"
+              }`}
             >
               {label}
             </a>
