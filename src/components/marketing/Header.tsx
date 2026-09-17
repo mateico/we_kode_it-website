@@ -11,6 +11,28 @@ const LINKS = [
 export function Header({ className = "" }: { className?: string }) {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const menuRef = React.useRef<HTMLElement>(null);
+
+  React.useEffect(() => {
+    if (!menuOpen) return;
+    const onOutside = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node;
+      if (
+        toggleRef.current?.contains(target) ||
+        menuRef.current?.contains(target)
+      ) {
+        return;
+      }
+      setMenuOpen(false);
+    };
+    document.addEventListener("mousedown", onOutside);
+    document.addEventListener("touchstart", onOutside);
+    return () => {
+      document.removeEventListener("mousedown", onOutside);
+      document.removeEventListener("touchstart", onOutside);
+    };
+  }, [menuOpen]);
 
   React.useEffect(() => {
     const update = () => setScrolled(window.scrollY > 24);
@@ -67,6 +89,7 @@ export function Header({ className = "" }: { className?: string }) {
             </Button>
           </a>
           <button
+            ref={toggleRef}
             type="button"
             aria-label="Menu"
             onClick={() => setMenuOpen((v) => !v)}
@@ -92,6 +115,7 @@ export function Header({ className = "" }: { className?: string }) {
 
         {/* mobile nav dropdown */}
         <nav
+          ref={menuRef}
           className={`absolute inset-x-0 top-full flex flex-col overflow-hidden bg-white transition-all duration-200 ${
             menuOpen
               ? "max-h-64  p-2 opacity-100 shadow-[0_8px_24px_rgba(0,0,0,0.08)]"

@@ -15,6 +15,7 @@ export function WorkImageCarousel({
   priority?: boolean;
 }) {
   const [index, setIndex] = React.useState(0);
+  const [revealed, setRevealed] = React.useState(false);
   const count = images.length;
   const touchStartX = React.useRef<number | null>(null);
 
@@ -25,6 +26,7 @@ export function WorkImageCarousel({
     e.preventDefault();
     e.stopPropagation();
     setIndex(next);
+    setRevealed(true);
   };
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -37,8 +39,10 @@ export function WorkImageCarousel({
     const threshold = 40;
     if (delta > threshold) {
       setIndex((i) => (i === 0 ? count - 1 : i - 1));
+      setRevealed(true);
     } else if (delta < -threshold) {
       setIndex((i) => (i + 1) % count);
+      setRevealed(true);
     }
     touchStartX.current = null;
   };
@@ -46,6 +50,7 @@ export function WorkImageCarousel({
   return (
     <div
       className="relative min-h-[220px] shrink-0 grow-0 basis-2/5 overflow-hidden rounded-2xl max-sm:basis-auto"
+      onClick={(e) => e.preventDefault()}
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
@@ -68,11 +73,11 @@ export function WorkImageCarousel({
               fill
               sizes="(min-width: 640px) 40vw, 100vw"
               priority={priority && i === 0}
-              className="object-cover object-top grayscale transition-[filter] duration-500 group-hover:grayscale-0 max-sm:grayscale-0"
+              className={`object-cover object-top grayscale transition-[filter] duration-500 group-hover:grayscale-0 ${revealed ? "grayscale-0" : ""}`}
             />
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-0 max-sm:opacity-0"
+              className={`pointer-events-none absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-0 ${revealed ? "opacity-0" : ""}`}
               style={{ background: accent }}
             />
           </div>

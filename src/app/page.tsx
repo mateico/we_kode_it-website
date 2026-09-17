@@ -38,9 +38,9 @@ export default function Home() {
         <Divider />
         <CTASection heading="Ready to build something real?" footNote />
         <Divider />
+        <Footer />
       </div>
 
-      <Footer />
       {/* 
 			<Divider />
 			<TechStack />
