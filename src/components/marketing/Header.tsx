@@ -73,7 +73,7 @@ export function Header({ className = "" }: { className?: string }) {
             height={25}
             className="block h-[25px] w-auto"
           />
-          <span className="font-display text-2xl font-semibold leading-none text-body">
+          <span className="hidden font-display text-2xl font-semibold leading-none text-body min-[380px]:inline">
             WeKodeit
           </span>
         </a>
@@ -81,11 +81,7 @@ export function Header({ className = "" }: { className?: string }) {
         {/* desktop nav */}
         <nav className="hidden justify-self-center gap-7 md:flex md:ml-12">
           {LINKS.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              className={navLink(pathname === href)}
-            >
+            <a key={label} href={href} className={navLink(pathname === href)}>
               {label}
             </a>
           ))}

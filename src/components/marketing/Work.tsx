@@ -22,7 +22,9 @@ function WorkCard({ work, priority }: { work: WorkItem; priority?: boolean }) {
   return (
     <a
       href={`/work#${work.slug}`}
-      className="group flex gap-8 rounded-card bg-card p-8 shadow-card no-underline transition-transform duration-150 hover:scale-[1.01] max-sm:flex-col max-sm:gap-4 max-sm:p-4"
+      className={`group flex gap-8 rounded-card bg-card p-8 shadow-card no-underline transition-transform duration-150 hover:scale-[1.01] max-sm:gap-4 max-sm:p-4 ${
+        work.imageFirst ? "max-sm:flex-col" : "max-sm:flex-col-reverse"
+      }`}
     >
       {work.imageFirst ? (
         <>
@@ -42,11 +44,11 @@ function WorkCard({ work, priority }: { work: WorkItem; priority?: boolean }) {
 export function Work() {
   return (
     <section className="bg-surface pb-24 pt-8">
-      <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-0">
+      <div className="mx-auto grid max-w-site grid-cols-12 gap-4 px-8 max-sm:px-0">
         <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
           Work
         </h2>
-        <div className="col-span-12 flex flex-col gap-6">
+        <div className="col-span-12 flex flex-col gap-6 max-sm:gap-4">
           {WORKS.map((w, i) => (
             <WorkCard key={w.slug} work={w} priority={i === 0} />
           ))}

@@ -18,6 +18,30 @@ export function WorkImageCarousel({
   const [revealed, setRevealed] = React.useState(false);
   const count = images.length;
   const touchStartX = React.useRef<number | null>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  React.useEffect(() => {
+    if (!isMobile || !revealed) return;
+    const reset = () => setRevealed(false);
+    const onPointerDown = (e: PointerEvent) => {
+      if (!containerRef.current?.contains(e.target as Node)) reset();
+    };
+    window.addEventListener("scroll", reset, { passive: true });
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      window.removeEventListener("scroll", reset);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [isMobile, revealed]);
 
   const go = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -49,6 +73,7 @@ export function WorkImageCarousel({
 
   return (
     <div
+      ref={containerRef}
       className="relative min-h-[220px] shrink-0 grow-0 basis-2/5 overflow-hidden rounded-2xl max-sm:basis-auto"
       onClick={(e) => e.preventDefault()}
       onTouchStart={onTouchStart}
@@ -73,7 +98,7 @@ export function WorkImageCarousel({
               fill
               sizes="(min-width: 640px) 40vw, 100vw"
               priority={priority && i === 0}
-              className={`object-cover object-top grayscale transition-[filter] duration-500 group-hover:grayscale-0 ${revealed ? "grayscale-0" : ""}`}
+              className={`object-cover object-top transition-[filter] duration-500 group-hover:grayscale-0 ${isMobile && revealed ? "grayscale-0" : "grayscale"}`}
             />
             <div
               aria-hidden
