@@ -5,7 +5,7 @@ import { WhatWeBuild } from "@/components/marketing/WhatWeBuild";
 import { HowWeWork } from "@/components/marketing/HowWeWork";
 import { WhyUs } from "@/components/marketing/WhyUs";
 import { CTASection } from "@/components/marketing/CTASection";
-import { CaseStudies } from "@/components/marketing/CaseStudies";
+import { Work } from "@/components/marketing/Work";
 import { Footer } from "@/components/marketing/Footer";
 
 // Thin horizontal rule between sections.
@@ -29,13 +29,13 @@ export default function Home() {
         <Divider />
         <WhatWeBuild />
         <Divider />
-        <HowWeWork />
+        <Work />
         <Divider />
         <WhyUs />
         <Divider />
         <CTASection compact />
         <Divider />
-        <CaseStudies />
+        <HowWeWork />
         <Divider />
         <CTASection heading="Ready to build something real?" footNote />
         <Divider />

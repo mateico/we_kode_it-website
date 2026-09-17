@@ -3,7 +3,10 @@
 import React from "react";
 import { Button } from "@/components/ui/Button";
 
-const LINKS = ["Web", "CRM", "Mobile", "About Us"];
+const LINKS = [
+  { label: "Work", href: "/work" },
+  { label: "About Us", href: "#" },
+];
 
 export function Header({ className = "" }: { className?: string }) {
   const [scrolled, setScrolled] = React.useState(false);
@@ -49,8 +52,8 @@ export function Header({ className = "" }: { className?: string }) {
 
         {/* desktop nav */}
         <nav className="hidden justify-self-center gap-7 md:flex md:ml-12">
-          {LINKS.map((label) => (
-            <a key={label} href="#" className={navLink}>
+          {LINKS.map(({ label, href }) => (
+            <a key={label} href={href} className={navLink}>
               {label}
             </a>
           ))}
@@ -95,10 +98,10 @@ export function Header({ className = "" }: { className?: string }) {
               : "max-h-0  p-0 opacity-0"
           }`}
         >
-          {LINKS.map((label) => (
+          {LINKS.map(({ label, href }) => (
             <a
               key={label}
-              href="#"
+              href={href}
               className="px-3 py-3 font-sans text-[15px] font-semibold text-body no-underline"
             >
               {label}

@@ -1,7 +1,9 @@
 import React from "react";
 
-const LINKS = ["Web", "CRM", "Mobile", "About Us", "Case Studies"];
-
+const LINKS = [
+  { label: "Work", href: "/work" },
+  { label: "About Us", href: "#" },
+];
 export function Footer() {
   return (
     <footer className="bg-surface">
@@ -19,13 +21,13 @@ export function Footer() {
         </div>
 
         <nav className="flex flex-col items-end gap-2 text-right max-sm:items-start max-sm:text-left">
-          {LINKS.map((l) => (
+          {LINKS.map(({ label, href }) => (
             <a
-              key={l}
-              href="#"
+              key={label}
+              href={href}
               className="font-sans text-sm text-muted no-underline"
             >
-              {l}
+              {label}
             </a>
           ))}
           <a
