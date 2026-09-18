@@ -20,24 +20,19 @@ const VALUES = [
 
 const TEAM = [
   {
-    name: "???? ?????",
-    role: "Java Backend Lead",
-    image: null,
+    name: "Max Dymnov",
+    role: "Mobile Fullstack",
+    image: "/team/max_dymnov.webp",
   },
   {
     name: "Mateo Rial",
-    role: "JavaScript Developer",
+    role: "Technical Lead",
     image: "/team/mateo_rial.webp",
   },
   {
-    name: "???? ?????",
-    role: "Database Engineer",
-    image: null,
-  },
-  {
-    name: "???? ?????",
-    role: "Mobile Development",
-    image: null,
+    name: "Kevin Gomez",
+    role: "Android Engineer",
+    image: "/team/kevin_gomez.webp",
   },
 ];
 
@@ -61,7 +56,7 @@ export default function AboutUsPage() {
       </section>
 
       <section className="bg-surface py-16 max-sm:py-10">
-        <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-6">
+        <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-2">
           <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
             Our bedrock
           </h2>
@@ -83,37 +78,41 @@ export default function AboutUsPage() {
       </section>
 
       <section className="bg-hero py-16 max-sm:py-10">
-        <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-6">
-          <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
+        <div className="mx-auto max-w-site px-4 max-sm:px-2">
+          <h2 className="mb-6 text-center text-[1.75rem] font-bold text-body">
             Team
           </h2>
-          {TEAM.map((m) => (
-            <div
-              key={m.name}
-              className="col-span-6 flex flex-col items-center gap-3 sm:col-span-3"
-            >
-              {m.image ? (
-                <Image
-                  src={m.image}
-                  alt={m.name}
-                  width={160}
-                  height={160}
-                  className="h-40 w-40 rounded-2xl object-cover"
-                />
-              ) : (
-                <div
-                  className="h-40 w-40 rounded-2xl bg-[#D9D9D9]"
-                  aria-label={m.name}
-                />
-              )}
-              <div className="flex flex-col items-center gap-1 text-center">
-                <span className="font-sans text-base font-bold text-body">
-                  {m.name}
-                </span>
-                <span className="font-sans text-sm text-muted">{m.role}</span>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
+            {TEAM.map((m) => (
+              <div
+                key={m.name}
+                className="flex w-[calc(50%-theme(spacing.6)/2)] flex-col items-center gap-3 sm:w-[calc(25%-theme(spacing.6)*3/4)]"
+              >
+                {m.image ? (
+                  <Image
+                    src={m.image}
+                    alt={m.name}
+                    width={160}
+                    height={160}
+                    className="h-40 w-40 rounded-2xl object-cover"
+                  />
+                ) : (
+                  <div
+                    className="h-40 w-40 rounded-2xl bg-[#D9D9D9]"
+                    aria-label={m.name}
+                  />
+                )}
+                <div className="flex flex-col items-center gap-1 text-center">
+                  <span className="font-sans text-base font-bold text-body">
+                    {m.name}
+                  </span>
+                  <span className="font-sans text-sm text-muted">
+                    {m.role}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
