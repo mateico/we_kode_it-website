@@ -36,9 +36,10 @@ export function Footer() {
           >
             hello@wekodeit.com
           </a>
-          <span className="mt-2 font-sans text-[13px] text-muted">
-            Esp | Eng
+          <span className="mt-2 font-sans text-sm text-muted">
+            Ejido 1275, Montevideo, Uruguay
           </span>
+
           <span className="mt-4 font-sans text-[13px] text-muted">
             © 2026 WeKodeit
           </span>
