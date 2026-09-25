@@ -4,9 +4,9 @@ import { Card } from "@/components/ui/Card";
 import { CTASection } from "@/components/marketing/CTASection";
 
 export const metadata: Metadata = {
-  title: "About Us — WeKodeit",
+  title: "About me — WeKodeit",
   description:
-    "Uruguayan software company with a strong sense of community — how we work, what we value, and who's on the team.",
+    "Uruguayan software engineer building web, CRM, and mobile products — how I work and what I value.",
 };
 
 const VALUES = [
@@ -18,39 +18,45 @@ const VALUES = [
   { title: "Long-term planning", icon: "trending_up", accent: "#F4B400" },
 ];
 
-const TEAM = [
-  {
-    name: "Max Dymnov",
-    role: "Mobile Fullstack",
-    image: "/team/max_dymnov.webp",
-  },
-  {
-    name: "Mateo Rial",
-    role: "Technical Lead",
-    image: "/team/mateo_rial.webp",
-  },
-  {
-    name: "Kevin Gomez",
-    role: "Android Engineer",
-    image: "/team/kevin_gomez.webp",
-  },
-];
-
 export default function AboutUsPage() {
   return (
     <>
       <section className="bg-hero py-16 max-sm:py-10">
-        <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-6">
-          <div className="col-span-12 mx-auto flex max-w-[640px] flex-col items-center gap-5 text-center">
-            <h1 className="m-0 font-display text-[2rem] font-bold text-body">
-              About WeKodeit
-            </h1>
-            <p className="m-0 font-sans text-base leading-6 text-muted">
-              Uruguayan software company with a strong sense of community. We
-              grow organically, work collaboratively and treat our clients as
-              partners. We embrace the latest technologies and innovations to
-              build to last and stay under control.
-            </p>
+        <div className="mx-auto max-w-site px-4 max-sm:px-2">
+          <h2 className="mb-6 text-center text-[1.75rem] font-bold text-body">
+            Who's behind WeKodeit
+          </h2>
+          <div className="mx-auto flex max-w-[640px] flex-col items-center gap-8">
+            <Image
+              src="/team/mateo_rial.webp"
+              alt="Mateo Rial"
+              width={200}
+              height={200}
+              className="h-48 w-48 shrink-0 rounded-2xl object-cover"
+            />
+            <div className="flex flex-col items-center gap-3 text-center">
+              <div className="flex flex-col gap-0.5">
+                <span className="font-sans text-lg font-bold text-body">
+                  Mateo Rial
+                </span>
+                <span className="font-sans text-sm font-semibold text-muted">
+                  Technical Lead, WeKodeit
+                </span>
+              </div>
+              <p className="m-0 font-sans text-base leading-6 text-muted">
+                I&apos;m a full-stack engineer based in Montevideo, Uruguay,
+                building web, CRM, and mobile products end to end — from
+                architecture down to the details that make a product feel solid.
+                WeKodeit grew out of that hands-on approach: instead of a large
+                agency, it&apos;s me working closely with each client, staying
+                accountable for the whole product rather than a slice of it.
+              </p>
+              <p className="m-0 font-sans text-base leading-6 text-muted">
+                I care about clear communication, pragmatic technical choices,
+                and shipping things that are still easy to maintain a year
+                later.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -58,7 +64,7 @@ export default function AboutUsPage() {
       <section className="bg-surface py-16 max-sm:py-10">
         <div className="mx-auto grid max-w-site grid-cols-12 gap-6 px-8 max-sm:px-2">
           <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
-            Our bedrock
+            My bedrock
           </h2>
           {VALUES.map((v) => (
             <Card
@@ -74,45 +80,6 @@ export default function AboutUsPage() {
               <h3 className="m-0 text-base font-bold text-body">{v.title}</h3>
             </Card>
           ))}
-        </div>
-      </section>
-
-      <section className="bg-hero py-16 max-sm:py-10">
-        <div className="mx-auto max-w-site px-4 max-sm:px-2">
-          <h2 className="mb-6 text-center text-[1.75rem] font-bold text-body">
-            Team
-          </h2>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
-            {TEAM.map((m) => (
-              <div
-                key={m.name}
-                className="flex w-[calc(50%-theme(spacing.6)/2)] flex-col items-center gap-3 sm:w-[calc(25%-theme(spacing.6)*3/4)]"
-              >
-                {m.image ? (
-                  <Image
-                    src={m.image}
-                    alt={m.name}
-                    width={160}
-                    height={160}
-                    className="h-40 w-40 rounded-2xl object-cover"
-                  />
-                ) : (
-                  <div
-                    className="h-40 w-40 rounded-2xl bg-[#D9D9D9]"
-                    aria-label={m.name}
-                  />
-                )}
-                <div className="flex flex-col items-center gap-1 text-center">
-                  <span className="font-sans text-base font-bold text-body">
-                    {m.name}
-                  </span>
-                  <span className="font-sans text-sm text-muted">
-                    {m.role}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

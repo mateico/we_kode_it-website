@@ -102,7 +102,7 @@ export function WorkImageCarousel({
             />
             <div
               aria-hidden
-              className={`pointer-events-none absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-0 ${revealed ? "opacity-0" : ""}`}
+              className={`pointer-events-none absolute inset-0 opacity-30 transition-opacity duration-500 group-hover:opacity-0 ${revealed ? "opacity-0" : ""}`}
               style={{ background: accent }}
             />
           </div>

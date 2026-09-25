@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 const LINKS = [
   { label: "Work", href: "/work" },
-  { label: "About Us", href: "/about-us" },
+  { label: "About me", href: "/about-us" },
 ];
 
 export function Header({ className = "" }: { className?: string }) {

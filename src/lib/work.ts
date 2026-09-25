@@ -57,4 +57,32 @@ export const WORKS: WorkItem[] = [
       "We replaced that manual step with a small backend built into an admin dashboard: she uploads a single photo or a before/after pair for a dog, and the system automatically composites it into a branded, gallery-ready square image — white frame, the shop's name, the dog's name, and an optional tagline, sized consistently at 1080×1080. She previews the result, downloads it, and either publishes it straight to the site's gallery or sends it on to the client — turning what used to be manual editing into a one-click, on-brand deliverable.",
     ],
   },
+  {
+    slug: "maxymar",
+    title: "Maxymar Kiteschool",
+    imageFirst: false,
+    accent: "#F2994A",
+    images: ["/work/maxymar/1.png", "/work/maxymar/2.png"],
+    link: "https://maximar.mateo-rial.workers.dev/",
+    summary:
+      "Maxymar Kiteschool teaches kitesurfing at Playa Malvín in Montevideo — the site pairs the pitch (certified instructors, ideal beginner conditions, ten years running) with a direct WhatsApp booking flow for classes, rentals, and instructor courses.",
+    paragraphs: [
+      "Maxymar is a kitesurf school based at Playa Malvín, a spot known for shallow water and steady thermal and southeast winds — low-risk conditions for someone learning to kite for the first time. The site leads with that pitch: a stats bar (100+ students a season, ten years running) right under the hero, then a services grid — individual lessons, equipment rental, instructor certification courses — each pointing to its own page.",
+      "Below the fold, a dedicated section makes the case for the location itself: an aerial shot of Playa Malvín paired with the specific conditions (thermal/southeast winds, a supervised water zone) that make it beginner-friendly. A blog with seasonal wind guides and gear advice rounds it out, and every call-to-action — from the hero button to the sticky WhatsApp icon — routes straight into booking a class.",
+    ],
+  },
+  {
+    slug: "silverglass",
+    title: "Silverglass",
+    imageFirst: true,
+    accent: "#4FA8A8",
+    images: ["/work/silverglass/1.png", "/work/silverglass/2.png"],
+    link: "https://silverglass.mateo-rial.workers.dev/",
+    summary:
+      "Silverglass is a Montevideo jewelry brand that fuses glass-blowing with silverwork — the site is a quiet, image-first showcase where each ring's photos, materials, and story do the selling.",
+    paragraphs: [
+      "Silverglass makes handmade rings that combine fused glass with silver, each piece one of a kind. The site keeps the homepage to a single, uncluttered statement — the brand's tagline and a two-button choice: browse the collection or get in touch — rather than burying the work under navigation.",
+      "The collection page is the real storefront: a grid of rings, each with its own two-photo carousel, a name, and a one-line description of its materials and colors. Contact runs entirely through WhatsApp, matching how the artisan actually takes orders — no cart, no checkout, just a direct line to the maker.",
+    ],
+  },
 ];
