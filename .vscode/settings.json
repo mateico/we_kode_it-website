@@ -1,5 +1,10 @@
 {
 	"files.associations": {
 		"wrangler.json": "jsonc"
-	}
+	},
+	"markdown.copyFiles.destination": {
+		"src/content/blog/*.mdx": "/public/blog/${documentBaseName}/${unixTime}-${fileName}"
+	},
+	"markdown.editor.filePaste.enabled": "smart",
+	"markdown.editor.drop.enabled": "smart"
 }

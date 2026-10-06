@@ -1,0 +1,36 @@
+This is a placeholder post to check the layout. Regular text supports **bold**, _italics_, `inline code` and [links](https://platform.openai.com/docs).
+
+## Calling the OpenAI API
+
+Install the SDK, then send your first request:
+
+```bash
+pnpm add openai
+```
+
+```ts
+import OpenAI from "openai";
+
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+const response = await client.responses.create({
+  model: "gpt-5",
+  input: "Explain embeddings in one sentence.",
+});
+
+console.log(response.output_text);
+```
+
+## Screenshots
+
+Images are plain Markdown and live in `public/blog/<slug>/`:
+
+![Sample screenshot](/blog/hello-world/sample.png)
+
+## Checklist
+
+- Write the post in MDX
+- Drop screenshots next to it
+- Register it in `src/lib/blog.ts`
+
+> Quotes look like this.

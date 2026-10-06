@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 const LINKS = [
   { label: "Work", href: "/work" },
+  // { label: "Blog", href: "/blog" },
   { label: "About me", href: "/about-us" },
 ];
 
@@ -81,7 +82,7 @@ export function Header({ className = "" }: { className?: string }) {
         {/* desktop nav */}
         <nav className="hidden justify-self-center gap-7 md:flex md:ml-12">
           {LINKS.map(({ label, href }) => (
-            <a key={label} href={href} className={navLink(pathname === href)}>
+            <a key={label} href={href} className={navLink(pathname === href || pathname.startsWith(`${href}/`))}>
               {label}
             </a>
           ))}
@@ -133,7 +134,7 @@ export function Header({ className = "" }: { className?: string }) {
               key={label}
               href={href}
               className={`px-3 py-3 font-sans text-[15px] font-semibold no-underline ${
-                pathname === href ? "text-body" : "text-muted"
+                pathname === href || pathname.startsWith(`${href}/`) ? "text-body" : "text-muted"
               }`}
             >
               {label}

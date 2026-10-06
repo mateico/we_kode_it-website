@@ -2,6 +2,7 @@ import React from "react";
 
 const LINKS = [
   { label: "Work", href: "/work" },
+  // { label: "Blog", href: "/blog" },
   { label: "About me", href: "/about-us" },
 ];
 export function Footer() {
