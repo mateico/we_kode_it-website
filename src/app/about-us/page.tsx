@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { CTASection } from "@/components/marketing/CTASection";
 
 export const metadata: Metadata = {
-  title: "About me — WeKodeit",
+  title: "About me — Mateo Rial",
   description:
     "Uruguayan software engineer building web, CRM, and mobile products — how I work and what I value.",
 };
@@ -24,7 +24,7 @@ export default function AboutUsPage() {
       <section className="bg-hero py-16 max-sm:py-10">
         <div className="mx-auto max-w-site px-4 max-sm:px-2">
           <h2 className="mb-6 text-center text-[1.75rem] font-bold text-body">
-            Who's behind WeKodeit
+            About me
           </h2>
           <div className="mx-auto flex max-w-[640px] flex-col items-center gap-8">
             <Image
@@ -40,16 +40,16 @@ export default function AboutUsPage() {
                   Mateo Rial
                 </span>
                 <span className="font-sans text-sm font-semibold text-muted">
-                  Technical Lead, WeKodeit
+                  Full-stack Developer
                 </span>
               </div>
               <p className="m-0 font-sans text-base leading-6 text-muted">
                 I&apos;m a full-stack engineer based in Montevideo, Uruguay,
                 building web, CRM, and mobile products end to end — from
                 architecture down to the details that make a product feel solid.
-                WeKodeit grew out of that hands-on approach: instead of a large
-                agency, it&apos;s me working closely with each client, staying
+                I enjoy working closely with each client or team, staying
                 accountable for the whole product rather than a slice of it.
+                I&apos;m open to full-time roles and freelance projects.
               </p>
               <p className="m-0 font-sans text-base leading-6 text-muted">
                 I care about clear communication, pragmatic technical choices,

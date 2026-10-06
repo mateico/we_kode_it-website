@@ -31,7 +31,7 @@ export function Hero() {
                 <br />
                 Say it.
                 <br />
-                We kode it.
+                I kode it.
               </h1>
               <p className="m-0 max-w-[500px] text-left font-sans text-xl leading-8 text-gray-500 max-lg:text-base max-lg:leading-6">
                 Direct communication, and a free prototype before you commit to
@@ -43,7 +43,7 @@ export function Hero() {
               >
                 <div className="flex flex-col gap-1">
                   <Input
-                    placeholder="Tell us what you need..."
+                    placeholder="Tell me what you need..."
                     multiline
                     value={need}
                     onChange={(e) => setNeed(e.target.value)}

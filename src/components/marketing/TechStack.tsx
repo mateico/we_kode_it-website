@@ -21,7 +21,7 @@ export function TechStack() {
     <section className="bg-page py-7">
       <div className="mx-auto flex max-w-site items-center gap-8 px-8">
         <p className="m-0 shrink-0 font-sans text-xl leading-8 text-gray-500 max-lg:text-base max-lg:leading-6">
-          Our stack
+          My stack
         </p>
         <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent_0%,black_12%,black_88%,transparent_100%)]">
           <div className="flex w-max items-center gap-[2.4rem] sm:gap-16 animate-tech-scroll">

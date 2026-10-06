@@ -129,7 +129,7 @@ export function BookCallForm() {
                 Book a call
               </h1>
               <p className="m-0 font-sans text-base text-muted">
-                Tell us how and when to reach you — we&apos;ll confirm by email.
+                Tell me how and when to reach you — I&apos;ll confirm by email.
               </p>
             </div>
 
@@ -177,7 +177,7 @@ export function BookCallForm() {
                 <Input
                   value={form.country}
                   onChange={set("country")}
-                  placeholder="Where are you contacting us from?"
+                  placeholder="Where are you contacting me from?"
                 />
               </Field>
 
@@ -270,7 +270,7 @@ export function BookCallForm() {
                 Request sent!
               </p>
               <p className="m-0 text-sm text-gray-500">
-                We&apos;ll confirm the call by email shortly.
+                I&apos;ll confirm the call by email shortly.
               </p>
             </div>
             <Button onClick={() => setStatus("idle")}>OK</Button>

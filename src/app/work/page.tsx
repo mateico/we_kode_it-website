@@ -5,8 +5,8 @@ import { WORKS, type WorkItem } from "@/lib/work";
 import { WorkImageCarousel } from "@/components/marketing/WorkImageCarousel";
 
 export const metadata: Metadata = {
-  title: "Work — WeKodeit",
-  description: "Web, CRM, and mobile products we've built for real teams.",
+  title: "Work — Mateo Rial",
+  description: "Web, CRM, and mobile products I've built for real clients.",
 };
 
 function WorkDetailCard({
@@ -78,7 +78,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <CTASection heading="Ready to build something real?" footNote />
+      <CTASection heading="Have a project in mind?" footNote />
     </>
   );
 }

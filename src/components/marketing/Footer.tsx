@@ -17,7 +17,7 @@ export function Footer() {
             </span>
           </div>
           <p className="m-0 max-w-[220px] font-sans text-sm text-muted">
-            We build web, CRM, and mobile products.
+            I build web, CRM, and mobile products.
           </p>
         </div>
 

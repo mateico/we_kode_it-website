@@ -34,7 +34,7 @@ export function SuccessDialog({ onClose }: { onClose: () => void }) {
             Message received!
           </p>
           <p className="m-0 text-sm text-gray-500">
-            We&apos;ll be in touch soon.
+            I&apos;ll be in touch soon.
           </p>
         </div>
         <Button onClick={onClose}>OK</Button>

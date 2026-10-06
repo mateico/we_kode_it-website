@@ -44,7 +44,7 @@ export function CTASection({ heading, footNote, compact }: CTASectionProps) {
           >
             <div className="flex flex-col gap-1">
               <Input
-                placeholder="Tell us what you need..."
+                placeholder="Tell me what you need..."
                 multiline
                 value={need}
                 onChange={(e) => setNeed(e.target.value)}

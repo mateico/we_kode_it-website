@@ -13,7 +13,7 @@ export function useNeedEmailForm() {
 
   const handleSubmit = async () => {
     const nextErrors = {
-      need: need.trim() ? "" : "Please tell us what you need.",
+      need: need.trim() ? "" : "Please tell me what you need.",
       email: !email.trim()
         ? "Please enter your email."
         : EMAIL_PATTERN.test(email.trim())

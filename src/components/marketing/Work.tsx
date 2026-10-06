@@ -46,7 +46,7 @@ export function Work() {
     <section className="bg-surface pb-24 pt-8">
       <div className="mx-auto grid max-w-site grid-cols-12 gap-4 px-8 max-sm:px-0">
         <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
-          Work
+          Selected work
         </h2>
         <div className="col-span-12 flex flex-col gap-6 max-sm:gap-4">
           {WORKS.map((w, i) => (

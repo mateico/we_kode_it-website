@@ -32,9 +32,14 @@ export function WhatWeBuild() {
   return (
     <section className="bg-surface pt-8 pb-24">
       <div className="mx-auto grid max-w-site grid-cols-12 gap-6 max-sm:gap-4 px-8 max-sm:px-0">
-        <h2 className="col-span-12 mb-6 text-center text-[1.75rem] font-bold text-body">
-          What we build
+        <h2 className="col-span-12 text-center text-[1.75rem] font-bold text-body">
+          What I build
         </h2>
+        <p className="col-span-12 mx-auto mb-6 mt-0 max-w-[560px] text-center font-sans text-base leading-6 text-muted">
+          I&apos;m Mateo, a full-stack developer. I design and build web and
+          mobile products end to end, and I&apos;m available for freelance
+          projects.
+        </p>
         {BUILDS.map((b) => (
           <div
             key={b.title}
