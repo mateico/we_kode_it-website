@@ -77,7 +77,7 @@ export const WORKS: WorkItem[] = [
     imageFirst: true,
     accent: "#4FA8A8",
     images: ["/work/silverglass/1.png", "/work/silverglass/2.png"],
-    link: "https://silverglass.mateo-rial.workers.dev/",
+    link: "https://silverglass.art/",
     summary:
       "Silverglass is a Montevideo jewelry brand that fuses glass-blowing with silverwork — the site is a quiet, image-first showcase where each ring's photos, materials, and story do the selling.",
     paragraphs: [
